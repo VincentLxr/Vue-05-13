@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="event">
+        <div id="example-1">
+            <button v-on:click="counter += 1"> 数值 : {{ counter }} </button>
+            <button v-on:click="greet('abc', $event)">Greet</button>
+            <p>{{ message.split('').reverse().join('') }}</p>
+            <button v-on:click="reversal">点击反转</button>
+        </div>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#event",
+        data: {
+            counter: 0,
+            message: "vue"
+        },
+        methods: {
+            greet: function (str, e) {
+                alert(str);
+                console.log(e);
+            },
+            reversal: function () {
+                this.message = this.message.split("").reverse().join("");
+            }
+        }
+    });
+</script>
+
+</html>

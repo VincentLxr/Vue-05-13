@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="message">
+        {{message}}
+        <p v-bind:title="look">悬浮查看</p>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#message",
+        data: {
+            message: "读书使人进步",
+            look: "页面刷新于" + new Date().toLocaleString()
+        }
+    })
+</script>
+
+</html>

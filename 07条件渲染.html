@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="condition">
+        <p v-if="seen">能看见了？</p>
+        <p v-show="ok">可以</p>
+    </div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    let vm = new Vue({
+	el : "#condition",
+	data : {
+		seen : true,
+		ok : true
+	}
+});
+</script>
+</html>

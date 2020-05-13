@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        list-style: none;
+        padding: 0px;
+    }
+</style>
+
+<body>
+    <div id="repeat">
+        <ul>
+            <li v-for="item,index in items" :key="index">
+                {{index+1}} : {{ item.message }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="value, key in object">
+                {{key}} : {{ value }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#repeat",
+        data: {
+            items: [
+                { message: '千山鸟飞绝,万径人踪灭。' },
+                { message: '孤舟蓑笠翁,独钓寒江雪。' }
+            ],
+            object: {
+                第一句: '大风起兮云飞扬，',
+                第二句: '威加海内兮归故乡。',
+                第三句: '安得猛士兮守四方。'
+            }
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="order">
+        <p v-if="seen">能看见了？</p>
+        <a v-bind:href="url">跳转</a>
+        <div @click="click1">
+            <button @click.stop="click2">点击</button>
+        </div>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#order",
+        data: {
+            seen: true,
+            url: "https://www.baidu.com"
+        },
+        methods: {
+            click1: function () {
+                alert("干哈");
+            },
+            click2: function () {
+                alert("有何吩咐");
+            }
+        }
+    });
+</script>
+
+</html>

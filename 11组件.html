@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="assembly">
+        <todo-item v-for="todo,index in todos" v-bind:todo="todo" v-bind:key="index"></todo-item>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    Vue.component("todo-item", {
+        template: '<p>{{todo.id+1}} : {{todo.text}}</p>',
+        props: ['todo']
+    })
+    let vm = new Vue({
+        el: "#assembly",
+        data: {
+            todos: [
+            { id: 0, text: '红豆生南国,春来发几枝？' },
+            { id: 1, text: '愿君多采撷,此物最相思。' },]
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .size {
+        font-size: 30px;
+    }
+
+    .color {
+        color: rgb(238, 255, 0);
+    }
+
+    .background {
+        background: #FF0000;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="size" v-bind:class="[ isActive ? 'background' : '', isGreen ? 'color' : '']"
+            style="width:300px; height:200px; text-align:center; line-height:200px;">
+            绑定 HTML Class
+        </div>
+        <div :style="{width:width,color:color, fontSize:size, background: isRed ? 'blue' : ''}">
+            绑定内联样式
+        </div>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isActive: true,
+            isGreen: true,
+            width: "300px",
+            color: "#FFFFFF",
+            size: '50px',
+            isRed: true
+        }
+    });
+</script>
+
+</html>
